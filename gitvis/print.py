@@ -28,10 +28,10 @@ def print_table(commits):
 
     start_date = six_months_ago - datetime.timedelta(
         days=six_months_ago.weekday() + 1
-    )  # Start from the previous Sunday
+    )
     end_date = today + datetime.timedelta(
         days=(5 - today.weekday())
-    )  # End on the next Saturday
+    )
 
     print(f"{six_empty_spaces}     {__build_header(start_date, end_date)}")
     max_val = max(commits.values(), default=0)
