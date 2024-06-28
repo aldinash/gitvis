@@ -21,12 +21,12 @@ from gitvis import DIR_ERROR, EMAIL_ERROR, DATE_ERROR, ERRORS
 )
 def run(d, email, date):
     if email == None:
-        email, error = utils.get_global_email(d)
+        email, error = utils.get_global_email(".")
         if error == EMAIL_ERROR:
             click.echo(ERRORS[EMAIL_ERROR])
             return
     if date == None:
-        date = datetime.date.today()
+        date = date = datetime.now().date()
     else:
         try:
             date = datetime.strptime(date, "%m-%d-%Y").date()
@@ -38,4 +38,6 @@ def run(d, email, date):
         click.echo(ERRORS[DIR_ERROR])
         return
     commits = stats.process_repos(git_folders, email)
+    click.echo(f"Email: {email}")
+    click.echo(f"Directory {d}")
     print_m.print_table(commits, date)

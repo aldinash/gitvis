@@ -1,4 +1,9 @@
 from .cli import run
 
-if __name__ == "__main__":
+
+def main():
     run()
+
+
+if __name__ == "__main__":
+    main()
