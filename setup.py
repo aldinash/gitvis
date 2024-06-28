@@ -1,8 +1,8 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name="gitvis",
-    version="0.1.0",
+    version="0.1.3",
     description="A CLI made with Python to visualize your Git commits",
     url="https://github.com/aldinash",
     author="Aldinash Seitenov",
@@ -15,6 +15,7 @@ setup(
         "gitdb>=4.0.11",
         "GitPython>=3.1.43",
         "smmap>=5.0.1",
+        "setuptools>=70.1.1",
     ],
     classifiers=[
         "Intended Audience :: Developers",
