@@ -1,5 +1,6 @@
 import datetime
 import colorama
+import click
 from colorama import Fore, Back, Style
 
 
@@ -22,15 +23,16 @@ def __get_day(i):
     return days.get(i, "   ")
 
 
-def print_table(commits):
-    print()
-    today = datetime.date.today()
-    six_months_ago = __add_months(today, -6)
+def print_table(commits, date):
+    click.echo()
+    six_months_forward = __add_months(date, 6)
 
-    start_date = six_months_ago - datetime.timedelta(days=six_months_ago.weekday() + 1)
-    end_date = today + datetime.timedelta(days=(5 - today.weekday()))
+    start_date = date - datetime.timedelta(days=date.weekday() + 1)
+    end_date = six_months_forward + datetime.timedelta(
+        days=(5 - six_months_forward.weekday())
+    )
 
-    print(f"{six_empty_spaces}     {__build_header(start_date, end_date)}")
+    click.echo(f"{six_empty_spaces}     {__build_header(start_date, end_date)}")
     max_val = max(commits.values(), default=0)
 
     s1 = start_date
@@ -44,7 +46,6 @@ def print_table(commits):
             sn2 += datetime.timedelta(days=7)
         s1 += datetime.timedelta(days=1)
         print(line)
-    print()
 
 
 def __print_cell(val, max_value):
