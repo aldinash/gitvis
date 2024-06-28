@@ -23,15 +23,12 @@ def __get_day(i):
 
 
 def print_table(commits):
+    print()
     today = datetime.date.today()
     six_months_ago = __add_months(today, -6)
 
-    start_date = six_months_ago - datetime.timedelta(
-        days=six_months_ago.weekday() + 1
-    )
-    end_date = today + datetime.timedelta(
-        days=(5 - today.weekday())
-    )
+    start_date = six_months_ago - datetime.timedelta(days=six_months_ago.weekday() + 1)
+    end_date = today + datetime.timedelta(days=(5 - today.weekday()))
 
     print(f"{six_empty_spaces}     {__build_header(start_date, end_date)}")
     max_val = max(commits.values(), default=0)
@@ -47,6 +44,7 @@ def print_table(commits):
             sn2 += datetime.timedelta(days=7)
         s1 += datetime.timedelta(days=1)
         print(line)
+    print()
 
 
 def __print_cell(val, max_value):
