@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="gitvis",
-    version="0.1.3",
+    version="0.1.0",
     description="A CLI made with Python to visualize your Git commits",
     url="https://github.com/aldinash",
     author="Aldinash Seitenov",
