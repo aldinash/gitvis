@@ -1,5 +1,5 @@
 import click
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from . import print_m, stats, scan, utils
 from gitvis import DIR_ERROR, EMAIL_ERROR, DATE_ERROR, ERRORS
@@ -30,6 +30,7 @@ def run(d, email, since):
     else:
         try:
             since = datetime.strptime(since, "%m-%d-%Y").date()
+            since = since - timedelta(days=180)
         except:
             click.echo(ERRORS[DATE_ERROR])
             return
