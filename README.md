@@ -6,7 +6,7 @@ GitVis is a tool that allows you to visualize your local commits for the last 6 
 The code is fully written in Python and is inspired by [gitcs](https://github.com/knbr13/gitcs).
 
 ## Demo
-![gitvis](./gitvis.gif)
+![gitvis](https://github.com/aldinash/gitvis/blob/main/gitvis.gif)
 
 Note that colors are highly dependent on the ANSI escape sequences of your terminal.
 
