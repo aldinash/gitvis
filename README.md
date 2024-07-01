@@ -8,6 +8,8 @@ The code is fully written in Python and is inspired by [gitcs](https://github.co
 ## Demo
 ![gitvis](./gitvis.gif)
 
+Note that colors are highly dependent on the ANSI escape sequences of your terminal.
+
 ## Installation
 
 The CLI is distributed via PyPi. To install the package:
