@@ -26,11 +26,10 @@ def run(d, email, since):
             click.echo(ERRORS[EMAIL_ERROR])
             return
     if since == None:
-        since = since = datetime.now().date()
+        since = since = datetime.now().date() - timedelta(180)
     else:
         try:
             since = datetime.strptime(since, "%m-%d-%Y").date()
-            since = since - timedelta(days=180)
         except:
             click.echo(ERRORS[DATE_ERROR])
             return
