@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="gitvis",
-    version="0.1.4",
+    version="0.1.8",
     long_description=long_description,
     long_description_content_type="text/markdown",
     description="A CLI made with Python to visualize your Git commits",
@@ -24,7 +24,6 @@ setup(
         "smmap>=5.0.1",
         "setuptools>=70.1.1",
     ],
-    readme="README.md",
     classifiers=[
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",  # Adjust to your chosen license
