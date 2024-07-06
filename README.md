@@ -10,7 +10,7 @@ The code is fully written in Python and is inspired by [gitcs](https://github.co
 
 Note that colors are highly dependent on the ANSI escape sequences of your terminal.
 
-## Installation
+## Installations
 
 The CLI is distributed via PyPi. To install the package:
 
